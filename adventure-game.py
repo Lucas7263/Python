@@ -18,25 +18,40 @@ left_path_questions = {
     "second": "Which planet has the most moons?", # Answer: Saturn
     "third": "What is the hottest planet in the solar system?" # Answer Venus
 }
-print(right_path_questions["first"])
+
 
 def mines_of_doom():
     print("There are two paths for you to choose from. Right or Left.")
-    choice = input("Which path do you choose?\n").lower
-    if choice == "right":
-        print("You travel a ways and enter a large room with a crudely dug hole in the center.")
-        
+    choice = input("Which path do you choose?\n")
+    print(choice)
+    if choice.lower() == "right":
+   
+      right_path()
 
-        #
-    elif choice == "left":
-        print("You travel a winding path and eventually enter a room exactly like the previous one.")
-       
+        
+    elif choice.lower() == "left":
+        left_path()
+    else:
+        print("No choice was made.")
+    
         
 def right_path():
+    print("You travel a ways and enter a large room with a with a spiral staircase that ascends into darkness.")
     print("")
-    
+    print("As you ascend the stairs for what seems an eternity you are confronted with a voice that enters your mind")
+    print("")
+    answer = input(f'{right_path_questions["first"]}\n')
+    if answer.lower() == "honey":
+        print("Ahh you are correct")
+        # answer_two = input(right_path_questions["second"])
+    elif answer.lower() != "honey":
+        print("You have failed. Now meet your doom!")
+        print("The staircase vanishes and you fall into eternal nothingness.")
     
     
     
 def left_path():
+    print("You follow a winding path and eventually enter a room exactly like the previous one.")
     print("")
+    
+mines_of_doom()
